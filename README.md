@@ -1,1 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Korean Facial Brisbane | Kyungnoh Skin & Retreat</title>
+
+  <meta name="description" content="Private Korean skin clinic in Brisbane. By appointment only. Personalised facials, advanced skin treatments and holistic body care. Book your session today." />
+  <meta name="keywords" content="Korean facial Brisbane, private skin clinic Brisbane, appointment only facial Brisbane, skin treatment Brisbane" />
+
+  <meta property="og:title" content="Kyungnoh Skin & Retreat" />
+  <meta property="og:description" content="Private, appointment-only Korean skin clinic in Brisbane" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      /* Brand-inspired tones (gold + sage) */
+      --cream: #f9f7f5;
+      --ink: #2f2f2f;
+      --muted: #666;
+
+      /* tuned to match your logo */
+      --gold: #c0a080;     /* soft warm gold */
+      --sage: #708060;     /* calm sage */
+      --sageDark: #647657; /* hover */
+
+      --panel: #efeae5;
+      --cardBorder: #eee;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      background:var(--cream);
+      font-family:'Noto Sans KR', sans-serif;
+      color:var(--ink);
+    }
+
+    .container {
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    /* ===== HEADER (blended + anchored) ===== */
+    header.site-header{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+
+      padding:22px 0 18px;
+      gap:12px;
+
+      /* subtle “anchor” line to blend the logo into the layout */
+      border-bottom: 1px solid rgba(192,160,128,0.18);
+    }
+
+    a.brand{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* transparent logo blends directly into the background */
+    .brand-logo{
+      height:76px;   /* refined, not overpowering */
+      width:auto;
+      display:block;
+
+      /* ultra-light depth to separate from background without looking “stickered” */
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Buttons (brand consistent) */
+    .btn{
+      border:1px solid rgba(192,160,128,0.65);
+      padding:10px 18px;
+      text-decoration:none;
+      color:var(--sage);
+      border-radius:999px;
+      font-weight:500;
+      letter-spacing:0.2px;
+      background:transparent;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      transition: transform 120ms ease, background 120ms ease, color 120ms ease, border-color 120ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0px); }
+
+    .btn-primary{
+      background:var(--sage);
+      color:#fff;
+      border-color:var(--sage);
+    }
+    .btn-primary:hover{
+      background:var(--sageDark);
+      border-color:var(--sageDark);
+    }
+
+    .btn-outline:hover{
+      background: rgba(192,160,128,0.10);
+      border-color: rgba(192,160,128,0.90);
+    }
+
+    /* Instagram icon button */
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(192,160,128,0.65);
+      color:var(--sage);
+      background:transparent;
+      text-decoration:none;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    .icon-btn:hover{
+      transform: translateY(-1px);
+      background: rgba(192,160,128,0.10);
+      border-color: rgba(192,160,128,0.90);
+    }
+    .icon-btn svg{
+      width:20px;
+      height:20px;
+      display:block;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      text-align:center;
+      padding:36px 0 60px; /* starts closer to header for cohesion */
+    }
+    .hero h1{
+      font-size:32px;
+      margin:10px 0 12px;
+      font-family:'Playfair Display', serif;
+      font-weight:500;
+      letter-spacing:0.2px;
+    }
+    .hero p{
+      color:var(--muted);
+      max-width:560px;
+      margin:0 auto;
+      line-height:1.55;
+    }
+
+    .badge{
+      display:inline-block;
+      border:1px solid rgba(192,160,128,0.55);
+      color:var(--sage);
+      padding:6px 14px;
+      font-size:12px;
+      margin-bottom:14px;
+      border-radius:20px;
+      letter-spacing:0.3px;
+      background: rgba(192,160,128,0.06);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section{
+      padding:50px 0;
+      text-align:center;
+    }
+
+    .section h2{
+      font-family:'Playfair Display', serif;
+      font-weight:500;
+      letter-spacing:0.2px;
+      margin:0 0 10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:#fff;
+      padding:20px;
+      border-radius:16px;
+      border:1px solid var(--cardBorder);
+    }
+
+    .card strong{ color:var(--sage); }
+
+    .booking-section{
+      background:var(--panel);
+      padding:40px;
+      border-radius:16px;
+      margin-top:30px;
+      border:1px solid rgba(192,160,128,0.22);
+    }
+
+    /* ===== FINAL CTA ===== */
+    .cta{
+      text-align:center;
+      padding:60px 0;
+    }
+    .cta h2{
+      font-family:'Playfair Display', serif;
+      font-weight:500;
+    }
+
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:#888;
+      padding:10px 0 30px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px){
+      .brand-logo{ height:62px; }
+      .hero{ padding:30px 0 52px; }
+      .hero h1{ font-size:26px; }
+      .cards{ grid-template-columns:1fr; }
+      .booking-section{ padding:26px; }
+      .header-actions{ gap:10px; }
+      .btn{ padding:10px 16px; }
+    }
+  </style>
+
+  <!-- SEO STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Kyungnoh Skin & Retreat",
+    "description": "Private Korean facial clinic in Brisbane offering appointment-only skin and body treatments.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brisbane",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "areaServed": "Brisbane"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a class="brand" href="https://www.instagram.com/kyungnohskinretreat/" target="_blank" rel="noopener" aria-label="Kyungnoh Skin & Retreat on Instagram">
+        <img class="brand-logo" src="logo.png" alt="Kyungnoh Skin & Retreat logo" />
+      </a>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="https://www.instagram.com/kyungnohskinretreat/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.5 2.5h9A5 5 0 0 1 21.5 7.5v9a5 5 0 0 1-5 5h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M17.4 6.7h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+
+        <a class="btn btn-primary" href="https://bookings.gettimely.com/kyungnohskinretreat/book">Book Now</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge">By Appointment Only</div>
+      <h1>Private Korean Skin Clinic in Brisbane</h1>
+      <p>
+        Personalised one-on-one treatments in a calm, private studio — designed for deep skin transformation and total relaxation.
+      </p>
+      <br /><br />
+      <a class="btn btn-primary" href="https://bookings.gettimely.com/kyungnohskinretreat/book">Book Your Appointment</a>
+    </section>
+
+    <!-- TRUST -->
+    <section class="section">
+      <h2>Why Clients Choose Us</h2>
+      <div class="cards">
+        <div class="card">
+          <strong>Private One-on-One Care</strong>
+          <p>No walk-ins. Every session is dedicated entirely to you.</p>
+        </div>
+        <div class="card">
+          <strong>Korean Skin Expertise</strong>
+          <p>Advanced techniques focused on long-term skin health.</p>
+        </div>
+        <div class="card">
+          <strong>Visible Results</strong>
+          <p>Clearer, smoother, healthier skin over time.</p>
+        </div>
+        <div class="card">
+          <strong>Calm Studio Environment</strong>
+          <p>A peaceful space designed for full relaxation and reset.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="section">
+      <h2>Secure Your Session</h2>
+      <div class="booking-section">
+        <p>Appointments are limited each week to maintain a personalised experience.</p>
+        <br />
+        <a class="btn btn-primary" href="https://bookings.gettimely.com/kyungnohskinretreat/book">Book Appointment</a>
+        <br /><br />
+        <p style="font-size:13px; color:#666;">
+          Select your treatment and preferred time through our secure booking system.
+        </p>
+      </div>
+    </section>
+
+    <!-- GOOGLE REVIEWS -->
+    <section class="section">
+      <h2>Google Reviews</h2>
+      <div class="booking-section">
+        <p style="color:#666; max-width:560px; margin:0 auto; line-height:1.55;">
+          Read verified feedback on our Google Business page — or leave your own review.
+        </p>
+        <br />
+
+        <div class="header-actions" style="margin-top:6px;">
+          <a class="btn btn-outline" href="https://share.google/XOIUs7l1UJjofsuCh" target="_blank" rel="noopener">
+            Read our Google Reviews
+          </a>
+
+          <a class="btn btn-primary" href="https://share.google/XOIUs7l1UJjofsuCh" target="_blank" rel="noopener">
+            Leave a Review
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta">
+      <h2>Start Your Skin Journey</h2>
+      <p style="color:#666;">Limited availability each week.</p>
+      <br />
+      <a class="btn btn-primary" href="https://bookings.gettimely.com/kyungnohskinretreat/book">Book Your Appointment</a>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Kyungnoh Skin &amp; Retreat | Private Appointment Only Studio
+  </footer>
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
+</body>
+</html>
